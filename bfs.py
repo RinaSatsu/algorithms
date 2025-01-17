@@ -13,8 +13,7 @@ def bfs_traverse(start, graph):
     current_vertex = vertex_queue.popleft()
     print(current_vertex, end = " ")
     visited.add(current_vertex)
-    adjacent = graph.find_adjacent_vertices(current_vertex)
-    for v in adjacent:
+    for v in graph.graph[current_vertex]:
       if v not in visited and v not in vertex_queue:
         vertex_queue.append(v)
   if not (visited == graph.vertices):

@@ -13,8 +13,7 @@ def dfs(start, graph):
     current_vertex = vertex_stack.pop()
     print(current_vertex, end = " ")
     visited.add(current_vertex)
-    adjacent = graph.find_adjacent_vertices(current_vertex)
-    for v in adjacent:
+    for v in graph.graph[current_vertex]:
       if v not in visited and v not in vertex_stack:
         vertex_stack.append(v)
   if not (visited == graph.vertices):
